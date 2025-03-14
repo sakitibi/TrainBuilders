@@ -13,9 +13,6 @@ st.title('TrainBuilders')
 '''
 st.code(code, language='python')
 
-
-image = Image.open('./Home.png')
-st.image(image, width=200)
 st.subheader('12ninアカウントでログイン')
 with st.form(key='12ninaccounts'):
 
