@@ -20,10 +20,16 @@ with st.form(key='12ninaccounts'):
         mail = st.text_input('EMail')
         password = st.text_input('パスワード')
         
-        submit_btn = st.form_submit_button('ログイン')
+        html = '''
+        <body>
+                <button type="submit" id="open">ログイン</button>
+                <script>
+                        document.getElementById('open').addEventListener('click', function() {
+                                location.href = 'https://sakitibi-com9.webnode.jp/api/trainbuilders/login/24ac77a0-013e-45ae-97d1-b6cc59fb958a';
+                        });
+                </script>
+        </body>
+        '''
         cancel_btn = st.form_submit_button('キャンセル')
-        if submit_btn:
-                url = 'https://sakitibi-com9.webnode.jp/api/trainbuilders/login/24ac77a0-013e-45ae-97d1-b6cc59fb958a'
-                webbrowser.open(url, 2)
-        elif cancel_btn:
+        if cancel_btn:
                 st.text('キャンセルしました')
