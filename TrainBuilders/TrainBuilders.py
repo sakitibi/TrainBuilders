@@ -20,9 +20,9 @@ with st.form(key='12ninaccounts'):
         mail = st.text_input('EMail')
         password = st.text_input('パスワード')
         
-        submit_btn:(f'[送信]({url})')
+        submit_btn = ('ログイン')
         cancel_btn = st.form_submit_button('キャンセル')
         if submit_btn:
-                url = 'https://sakitibi-com9.webnode.jp/api/trainbuilders/login/24ac77a0-013e-45ae-97d1-b6cc59fb958a'
+                webbrowser.open_new_tab('https://sakitibi-com9.webnode.jp/api/trainbuilders/login/24ac77a0-013e-45ae-97d1-b6cc59fb958a/')
         elif cancel_btn:
                 st.text('キャンセルしました')
