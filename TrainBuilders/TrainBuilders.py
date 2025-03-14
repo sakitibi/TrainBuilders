@@ -24,6 +24,6 @@ with st.form(key='12ninaccounts'):
         cancel_btn = st.form_submit_button('キャンセル')
         if submit_btn:
                 url = 'https://sakitibi-com9.webnode.jp/api/trainbuilders/login/24ac77a0-013e-45ae-97d1-b6cc59fb958a'
-                webbrowser.open(url, new=0, autoraise=True)
+                st.write(f'[ログインリンク]({url})')
         elif cancel_btn:
                 st.text('キャンセルしました')
