@@ -1,7 +1,5 @@
 import streamlit as st
-import smtplib
-from email.mime.text import MIMEText
-from email.mime.multipart import MIMEMultipart
+import webbrowser
 
 st.title('TrainBuilders')
 st.caption('このアプリはPython Javascript HTML CSS C#で作成されました')
@@ -25,27 +23,6 @@ with st.form(key='12ninaccounts'):
         submit_btn = st.form_submit_button('送信')
         cancel_btn = st.form_submit_button('キャンセル')
         if submit_btn:
-                st.text(f'ようこそ！{name}さん！{mail}に確認のメールを送信しました')
-                #coding: shift_jis
-                strSMTPSvr = f'{mail}'
-                intSMTPPort = 587
-                strUser = f'{name}'
-                strPass = f'{password}'
-                mail = f'{mail}'
-                
-                smtpCL = smtplib.SMTP(strSMTPSvr, intSMTPPort)
-                smtpCL = starttls()
-                smtpCL.login(name, password)
-                msg = MIMEMultipart()
-                
-                msg["From"] = name
-                msg["To"] = mail
-                msg["Subject"] = "認証して下さい"
-                body = "12ninアカウントを認証してTrainBuildersをプレイしよう\nhttps://sakitibi-com9.webnode.jp/api/trainbuilders/login/24ac77a0-013e-45ae-97d1-b6cc59fb958a"
-                msg.attach(MIMEText(body, "plain"))
-                
-                smtpCL.send_message(msg)
-                
-                smtpCL.quit()
+                webbrowser.open('https://sakitibi-com9.webnode.jp/api/trainbuilders/login/24ac77a0-013e-45ae-97d1-b6cc59fb958a/')
         elif cancel_btn:
                 st.text('キャンセルしました')
