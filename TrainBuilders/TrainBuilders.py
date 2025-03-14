@@ -1,5 +1,4 @@
 import streamlit as st
-from bs4 import BeautifulSoup
 
 st.title('TrainBuilders')
 st.caption('このアプリはPython Javascript HTML CSS C#で作成されました')
