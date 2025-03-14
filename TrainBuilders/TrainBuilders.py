@@ -31,7 +31,7 @@ with st.form(key='12ninaccounts'):
                 intSMTPPort = 587
                 strUser = f'{name}'
                 strPass = f'{password}'
-                str.To = f'{mail}'
+                mail = f'{mail}'
                 
                 smtpCL = smtplib.SMTP(strSMTPSvr, intSMTPPort)
                 smtpCL = starttls()
