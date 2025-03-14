@@ -1,5 +1,5 @@
 import streamlit as st
-import webbrowser
+from selenium import webdriver
 
 st.title('TrainBuilders')
 st.caption('このアプリはPython Javascript HTML CSS C#で作成されました')
@@ -23,6 +23,8 @@ with st.form(key='12ninaccounts'):
         submit_btn = st.form_submit_button('ログイン')
         cancel_btn = st.form_submit_button('キャンセル')
         if submit_btn:
-                webbrowser.open('https://sakitibi-com9.webnode.jp/api/trainbuilders/login/24ac77a0-013e-45ae-97d1-b6cc59fb958a/')
+                driver = webdriver.Chrome()
+                driver = webdriver.Chrome(executable_path='chromedriver')
+                driver.get('https://sakitibi-com9.webnode.jp/api/trainbuilders/login/24ac77a0-013e-45ae-97d1-b6cc59fb958a/')
         elif cancel_btn:
                 st.text('キャンセルしました')
