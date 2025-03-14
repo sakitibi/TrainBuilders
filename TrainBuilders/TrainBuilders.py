@@ -1,4 +1,5 @@
 import streamlit as st
+from bs4 import BeautifulSoup
 
 st.title('TrainBuilders')
 st.caption('このアプリはPython Javascript HTML CSS C#で作成されました')
@@ -14,21 +15,9 @@ st.code(code, language='python')
 
 st.subheader('12ninアカウントでログイン')
 with st.form(key='12ninaccounts'):
-
-        name = st.text_input('名前')
-        mail = st.text_input('EMail')
-        password = st.text_input('パスワード')
-        
-        html = '''
-        <body>
-                <button type="submit" id="open">ログイン</button>
-                <script>
-                        document.getElementById('open').addEventListener('click', function() {
-                                location.href = 'https://sakitibi-com9.webnode.jp/api/trainbuilders/login/24ac77a0-013e-45ae-97d1-b6cc59fb958a';
-                        });
-                </script>
-        </body>
-        '''
+        submit_btn = st.form_submit_button('ログイン')
         cancel_btn = st.form_submit_button('キャンセル')
-        if cancel_btn:
+        if submit_btn:
+                st.text('ここにアクセスして下さい\nhttps://sakitibi-com9.webnode.jp/api/trainbuilders/login/24ac77a0-013e-45ae-97d1-b6cc59fb958a/')
+        elif cancel_btn:
                 st.text('キャンセルしました')
